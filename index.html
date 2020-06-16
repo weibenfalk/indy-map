@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indiana Jones Map</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img class="plane" src="plane2.jpg" />
+      <div class="map-wrapper">
+        <img class="map" src="map.jpg" />
+        <svg
+          width="1023"
+          height="394"
+          viewBox="0 0 1023 394"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="indy"
+            d="M2 118L549 6L683 350L1022 389"
+            stroke="#CE1616"
+            stroke-width="10"
+          />
+        </svg>
+        <div class="circle usa"></div>
+        <div class="circle sweden"></div>
+        <div class="circle madagascar"></div>
+        <div class="circle australia"></div>
+      </div>
+    </div>
+
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .plane {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 600px;
+        height: auto;
+        z-index: 10000;
+        opacity: 0.2;
+      }
+
+      .wrapper {
+        position: relative;
+        max-width: 600px;
+        max-height: 400px;
+        margin: 50px;
+        overflow: hidden;
+      }
+
+      .map {
+        width: 1596px;
+      }
+
+      .map-wrapper {
+        position: relative;
+        animation: animateMap 10s linear forwards;
+      }
+
+      @keyframes animateMap {
+        0% {
+          transform: translate(0, -250px);
+        }
+        44% {
+          transform: translate(-500px, -150px);
+        }
+        73% {
+          transform: translate(-650px, -500px);
+        }
+        100% {
+          transform: translate(-800px, -500px);
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: 350px;
+        left: 270px;
+      }
+
+      .indy {
+        stroke-dasharray: 1250px;
+        stroke-dashoffset: 1250px;
+        animation: dash 10s linear forwards;
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .circle {
+        width: 25px;
+        height: 25px;
+        background: #ce1616;
+        position: absolute;
+        z-index: 100;
+        border-radius: 50%;
+        animation: 0.3s animateDot forwards;
+        transform: scale(0);
+      }
+
+      @keyframes animateDot {
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .usa {
+        top: 455px;
+        left: 262px;
+      }
+
+      .sweden {
+        animation-delay: 4.4s;
+        top: 345px;
+        left: 805px;
+      }
+
+      .madagascar {
+        animation-delay: 7.3s;
+        top: 685px;
+        left: 940px;
+      }
+
+      .australia {
+        animation-delay: 10s;
+        top: 725px;
+        left: 1260px;
+      }
+    </style>
+  </body>
+</html>
